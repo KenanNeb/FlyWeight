@@ -1,6 +1,6 @@
-﻿using static FlyweightDesignPattern.Circle;
+﻿using static FlyWeight.Circle;
 
-namespace FlyweightDesignPattern
+namespace FlyWeight
 {
     public interface Shape
     {
@@ -26,7 +26,7 @@ namespace FlyweightDesignPattern
 
         public class ShapeFactory
         {
-            private static Dictionary<string, Shape> shapeMap = new Dictionary<string, Shape>();
+            private static Dictionary<string, Shape> shapeMap = new();
             public static Shape GetShape(string shapeType)
             {
                 Shape shape = null;
@@ -51,6 +51,9 @@ namespace FlyweightDesignPattern
     {
         static void Main(string[] args)
         {
+            Console.Title = "Flyweight";
+            Console.ForegroundColor = ConsoleColor.Green;
+
             Console.WriteLine("\n Red color Circles ");
             for (int i = 0; i < 3; i++)
             {
